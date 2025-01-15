@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESTless</title>
+    <style>
+        :root {
+            --input-font-size: 12pt;
+            --input-padding: 10px;
+            --primary-color: #F9F7F7;
+            --inverted-color: #112D4E;
+            --inverted-lighter: #3F72AF;
+            --vert-space: 2ex;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        h1 {
+            line-height: 1.5;
+        }
+
+        .main-container {
+            display: flex;
+            min-height: 100%;
+            color: var(--inverted-color);
+            background-color: var(--primary-color);
+        }
+
+        .side {
+            flex: 1;
+            background-color: var(--inverted-color);
+            color: var(--primary-color);
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 3ex;
+        }
+
+        .side li {
+            list-style: none;
+            padding: 1ex;
+            width: 80%;
+            text-align: center;
+        }
+
+        .side li:hover {
+            color: white;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .main {
+            flex: 6;
+            padding: 3ex;
+        }
+
+        body, html {
+            height: 100%;
+        }
+
+        .url-input {
+            display: flex;
+        }
+
+        .url-input *:not(:last-child) {
+            margin-right: 3px;
+        }
+
+        input {
+            padding: var(--input-padding);
+            font-size: var(--input-font-size);
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+
+        select {
+            background-color: white;
+            border: 1px solid gray;
+            padding: var(--input-padding);
+            font-size: var(--input-font-size);
+            border-radius: 5px;
+        }
+
+        button {
+            padding: var(--input-padding) calc(var(--input-padding) * 2);
+            font-size: var(--input-font-size);
+            background-color: var(--inverted-color);
+            border: none;
+            border-radius: 5px;
+            color: var(--primary-color);
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: var(--inverted-lighter);
+        }
+
+        .spacer {
+            height: var(--vert-space);
+            display: block;
+        }
+
+        .headers table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .headers table, th, td {
+            border: 1px #112D4E solid;
+            font-size: var(--input-font-size);
+        }
+
+        .headers th, td {
+            padding: var(--input-padding);
+        }
+
+        .headers td {
+            font-family: monospace;
+        }
+
+        .headers th {
+            background-color: var(--inverted-color);
+            color: var(--primary-color);
+        }
+
+        .headers input {
+            width: 100%;
+            /*padding: 0;*/
+            box-sizing: border-box;
+            border-radius: 0;
+            border: none;
+            font-family: monospace;
+        }
+
+        .headers td:has(input), td:has(button) {
+            padding: 0;
+        }
+
+        .icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 200px;
+        }
+
+        textarea {
+            font-family: monospace;
+        }
+
+        td button {
+            padding: 8px;
+            margin-left: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="side">
+            <img src="logo.png" style="max-width: 200px;" />
+            <ul>
+                <li>Home</li>
+                <li>Settings</li>
+                <li>About</li>
+            </ul>
+        </div>
+        <div class="main">
+            <h1>RESTless - A REST client</h1>
+            <div class="url-input">
+                <select id="http-method">
+                    <option>GET</option>
+                    <option>POST</option>
+                    <option>PUT</option>
+                    <option>DELETE</option>
+                    <option>PATCH</option>
+                </select>
+                <input type="url" placeholder="Target URL" style="flex-grow: 10;" />
+                <button type="submit" class="">Test</button>
+            </div>
+            <span class="spacer"></span>
+            <!-- BODY -->
+            <h2>HTTP Headers</h2>
+            <div class="headers">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Key</th>
+                            <th>Value</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" name="" id=""></td>
+                            <td>Content-Type</td>
+                            <td>application/json</td>
+                            <td><button>
+                                <img src="trash.svg" class="icon">
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="text" placeholder="Header name"></td>
+                            <td><input type="text" placeholder="Header value"></td>
+                            <td><button><img src="plus.svg" class="icon"></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <span class="spacer"></span>
+            <!-- BODY -->
+            <h2>Body</h2>
+            <textarea name="body" id=""></textarea>
+        </div>
+    </div>
+    
+</body>
+</html>
