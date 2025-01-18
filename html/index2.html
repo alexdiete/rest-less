@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,7 +61,8 @@
             padding: 3ex;
         }
 
-        body, html {
+        body,
+        html {
             height: 100%;
         }
 
@@ -111,12 +113,15 @@
             width: 100%;
         }
 
-        .headers table, th, td {
+        .headers table,
+        th,
+        td {
             border: 1px #112D4E solid;
             font-size: var(--input-font-size);
         }
 
-        .headers th, td {
+        .headers th,
+        td {
             padding: var(--input-padding);
         }
 
@@ -138,7 +143,8 @@
             font-family: monospace;
         }
 
-        .headers td:has(input), td:has(button) {
+        .headers td:has(input),
+        td:has(button) {
             padding: 0;
         }
 
@@ -204,8 +210,8 @@
                             <td>Content-Type</td>
                             <td>application/json</td>
                             <td><button>
-                                <img src="trash.svg" class="icon">
-                            </button></td>
+                                    <img src="trash.svg" class="icon">
+                                </button></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -220,8 +226,19 @@
             <!-- BODY -->
             <h2>Body</h2>
             <textarea name="body" id=""></textarea>
+            <span class="spacer"></span>
+            <h2>Response</h2>
+
+            <textarea name="body" id="" readonly>
+STATUS: OK
+Body: 
+{
+    Some stuff
+}
+            </textarea>
         </div>
     </div>
-    
+
 </body>
+
 </html>
